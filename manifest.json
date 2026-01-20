@@ -4,7 +4,8 @@
     "version": "1.0",
     "description": "TODO",
     "permissions": [
-        "storage"
+        "storage",
+        "scripting"
     ],
     "action": {
         "default_popup": "popup/popup.html"
@@ -19,8 +20,21 @@
             "js": [
                 "vendor/highlight.min.js",
                 "scripts/content.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "vendor/monokai.min.css",
+                "vendor/nord.min.css",
+                "vendor/github-dark.min.css"
             ],
-            "css": []
+            "matches": [
+                "file:///*",
+                "https://*/*",
+                "http://*/*"
+            ]
         }
     ]
 }

@@ -5,7 +5,8 @@ async function main() {
     const themeSelector = document.getElementById("themeSelector");
     const storageValue = await chrome.storage.local.get([THEME_STORAGE_KEY]);
     if (storageValue) {
-        themeSelector.value = storageValue[THEME_STORAGE_KEY];
+        const theme = storageValue[THEME_STORAGE_KEY];
+        themeSelector.value = theme;
     }
 
     form.addEventListener("submit", async (event) => {
@@ -13,6 +14,7 @@ async function main() {
         // get value and save to
         const selectedTheme = themeSelector.value;
         await chrome.storage.local.set({ [THEME_STORAGE_KEY]: selectedTheme });
+        window.close();
     });
 }
 
