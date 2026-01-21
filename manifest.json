@@ -2,7 +2,6 @@
     "manifest_version": 3,
     "name": "Chrome Highlight",
     "version": "1.0",
-    "description": "TODO",
     "permissions": [
         "storage",
         "scripting"
@@ -13,9 +12,7 @@
     "content_scripts": [
         {
             "matches": [
-                "file:///*",
-                "https://*/*",
-                "http://*/*"
+                "<all_urls>"
             ],
             "js": [
                 "vendor/highlight.min.js",
@@ -26,14 +23,10 @@
     "web_accessible_resources": [
         {
             "resources": [
-                "vendor/monokai.min.css",
-                "vendor/nord.min.css",
-                "vendor/github-dark.min.css"
+                "vendor/*.min.css"
             ],
             "matches": [
-                "file:///*",
-                "https://*/*",
-                "http://*/*"
+                "<all_urls>"
             ]
         }
     ]
