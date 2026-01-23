@@ -18,7 +18,9 @@ npm run build # build & bundle with Vite
 - [x] Build step that fetches highlight.js
     - All themes are available on [npm](https://www.npmjs.com/package/highlight.js?activeTab=readme) and can be fetched at build time.
 - [x] Popup should automatically list all themes
-- [ ] Avoid freezing the window with [Web Workers](https://github.com/highlightjs/highlight.js?tab=readme-ov-file#using-web-workers)
+- [ ] FIX: window freezing on large files
+        - [Web Workers](https://github.com/highlightjs/highlight.js?tab=readme-ov-file#using-web-workers)
+        - replace highlight.js with [Shiki](https://shiki.style/) (WASM-accelerated)
 
 ## Sources
 
