@@ -21,8 +21,10 @@ npm run build # build & bundle with Vite
 - [ ] FIX: window freezing on large files
         - [Web Workers](https://github.com/highlightjs/highlight.js?tab=readme-ov-file#using-web-workers)
         - replace highlight.js with [Shiki](https://shiki.style/) (WASM-accelerated)
-- [ ] notifications
-- [ ] auto page reload
+- [ ] Notifications
+    - [x] Notify theme change
+    - [ ] Notify hilighting completed
+- [x] Auto page reload
 
 ## Sources
 

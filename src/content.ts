@@ -6,6 +6,18 @@ async function main() {
   const preTag =
     document.querySelector<HTMLElement>("body > pre:only-child") ||
     document.querySelector<HTMLElement>("body > pre:has(+ div)"); // match pages with "pretty-print" banner
+
+  chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
+    if (!preTag) {
+      sendResponse();
+      return;
+    }
+    if (message.action === "themeChange") {
+      window.location.reload();
+    }
+    sendResponse();
+  });
+
   if (!preTag) {
     return;
   }
@@ -13,7 +25,6 @@ async function main() {
   // get theme name
   const storageValuePair = await chrome.storage.local.get([THEME_STORAGE_KEY]);
   if (typeof storageValuePair[THEME_STORAGE_KEY] !== "string") {
-    console.log(typeof storageValuePair[THEME_STORAGE_KEY]);
     return;
   }
   const theme = storageValuePair[THEME_STORAGE_KEY];

@@ -22,7 +22,6 @@ export default defineConfig({
       },
       output: {
         entryFileNames: (chunkInfo) => {
-          //console.log(chunk);
           switch (chunkInfo.name) {
             case "popup":
               return "popup.js";
