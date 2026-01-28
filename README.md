@@ -1,11 +1,11 @@
-# Chrome Highlight
+# Medium Rare
 
-A simple extension to highlight raw code in chrome.
+Additional features to raw code preview in the browser.
 
 ![](./assets/screenshot.png)
 
 ```bash
-npm run check # check with biome
+npm run check # check with Biome
 
 npm run build # build & bundle with Vite
 ```

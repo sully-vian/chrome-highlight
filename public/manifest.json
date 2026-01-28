@@ -1,7 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Chrome Highlight",
-  "version": "1.0",
+  "name": "Medium Rare",
   "permissions": ["storage", "scripting"],
   "action": {
     "default_popup": "popup.html"

@@ -1,7 +1,5 @@
 {
-  "name": "chrome-highlight",
   "version": "1.0.0",
-  "description": "A simple extension to highlight raw code in chrome.",
   "scripts": {
     "build": "tsc -b && vite build",
     "check": "biome check --write"
