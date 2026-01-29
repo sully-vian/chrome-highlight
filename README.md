@@ -14,7 +14,11 @@ npm run build # build & bundle with Vite
 
 - [x] Dynamic CSS loading with respect to the selected theme
 - [x] Download or link [all supported themes](https://github.com/highlightjs/highlight.js/tree/main/src/styles)
-- [ ] Pretty popup selection
+- [ ] Appearance
+    - [ ] Pretty popup selection
+        - [ ] custom dropdown for mouse wheele selection
+    - [ ] Fix notif (borken because of popup styling.
+    - [ ] Icon (Typst -> SVG)
 - [x] Build step that fetches highlight.js
     - All themes are available on [npm](https://www.npmjs.com/package/highlight.js?activeTab=readme) and can be fetched at build time.
 - [x] Popup should automatically list all themes
@@ -25,6 +29,8 @@ npm run build # build & bundle with Vite
     - [x] Notify theme change
     - [ ] Notify hilighting completed
 - [x] Auto page reload
+- [ ] Dev
+    - [ ] different `tsconfig.json` for node and app
 
 ## Sources
 

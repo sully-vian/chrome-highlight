@@ -1,9 +1,31 @@
-import { resolve } from "node:path";
-import { defineConfig } from "vite";
+import { extname, join, relative, resolve } from "node:path";
+import { renderFile } from "ejs";
+import { defineConfig, type PluginOption } from "vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
+import styles from "./styles.json";
+
+function ejsPlugin(ejsFiles: string[]): PluginOption {
+  const srcRoot = join(__dirname, "src");
+  return {
+    name: "ejs",
+    async generateBundle() {
+      for (const filePath of ejsFiles) {
+        const html = await renderFile(filePath, { styles });
+        const relPath = relative(srcRoot, filePath);
+        const outName = relPath.replace(extname(relPath), ".html");
+        this.emitFile({
+          type: "asset",
+          fileName: outName,
+          source: html,
+        });
+      }
+    },
+  };
+}
 
 export default defineConfig({
   plugins: [
+    ejsPlugin(["src/popup.ejs"]),
     viteStaticCopy({
       // copy css files to vendor
       targets: [
@@ -22,6 +44,7 @@ export default defineConfig({
       },
       output: {
         entryFileNames: (chunkInfo) => {
+          console.log(chunkInfo.name);
           switch (chunkInfo.name) {
             case "popup":
               return "popup.js";

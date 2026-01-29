@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./vendor/default.min.css">
+    <link rel="stylesheet" href="./popup.css">
+</head>
+
+<body class="hljs">
+    <pre><form id="themeForm"><span class="hljs-keyword">class</span> <span class="hljs-title">MediumRare</span> {
+    <span class="hjls-comment">// click and pick</span>
+    theme = <select id="themeSelector" class="hljs-string">
+        <% for ([theme,file] of Object.entries(styles)) {%>
+        <option value="<%= file %>" class="hljs-string">
+            "<%= theme %>";
+        </option>
+        <% } %>
+    </select>
+
+    <span class="hljs-comment">// click to save</span>
+    <button type="submit"><span class="hljs-title">save</span>() { <span class="hljs-comment">/* ... */</span> }</button>
+}
+</pre></form>
+    <script src="./popup.js"></script>
+</body>
+
+</html>
